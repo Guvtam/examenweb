@@ -1,0 +1,125 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{% block titulo %}  {% endblock %}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="{% static 'floreria/css/style.css'%}">
+  </head>
+  <body>
+    <!--
+    <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'inicio' %}">Inicio</a>
+            <a class="nav-item nav-link active" href="{% url 'tienda' %}">Tienda</a>
+            <a class="nav-item nav-link active" href="#">Registrate</a>
+        </div>
+    </nav>
+    -->
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-success">
+      <a name="inicio"></a>
+
+      
+      <div class="container-fluid">
+          <img src="{% static 'floreria/img/flower1.svg' %}" alt="Logo flor " width="30" height="24">
+          <a class="navbar-brand" href="{% url 'inicio' %}">Comunidad Floral</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}">Nosotros</a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url 'tienda' %}">Tienda</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url 'registro_usuario' %}">Registrate</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Benvenido {{ user }}</a>
+                </li>
+
+              </ul>
+
+              {% if messages %}
+                {% for message in messages %}
+                <div class="notification {{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+              {% endif %}
+
+
+
+
+          </div>
+      </div>
+  </nav>
+      
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+              <br>
+              <br>
+                
+                {% block contenido %}  {% endblock %}
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+      <footer class="bd-footer py-5 mt-5 bg-light">
+          <div class="container py-5">
+              <div class="row">
+                  <div class="col-lg-3 mb-3">
+                      <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
+                          <img src="{% static 'floreria/img/flower1.svg'%}" alt="Logo flor " width="30" height="24">
+                          <span class="fs-5">Comunidad floral</span>
+                      </a>
+
+                  </div>
+                  <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                      <h5>Categorias</h5>
+                      <ul class="list-unstyled">
+                          <li class="mb-2"><a href="#">Inicio</a></li>
+                          <li class="mb-2"><a href="#">Flores</a></li>
+                          <li class="mb-2"><a href="#">Maceteros</a></li>
+                          <li class="mb-2"><a href="#">Fertilizantes</a></li>
+                          <li class="mb-2"><a href="#">Tienda</a></li>
+
+                      </ul>
+                  </div>
+
+                  <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                      <h5>Contacto</h5>
+                      <p class="btn btn-success">+569 5700 9134</p>
+
+                  </div>
+
+              </div>
+          </div>
+      </footer>
+  </footer>
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>

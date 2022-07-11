@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block titulo %} Nosotros {% endblock %}
+
+{% block contenido %} 
+{% load static %}
+<div class="container-fluid alto">
+
+    <div class="row ">
+        <div class="col-5 margen1">
+
+            <H2 class="text-center">¿ Quienes somos ?</H2>
+            <p class="text-center">Somos “Comunidad floral” un grupo de vecinos que comenzamos a realizar ventas de productos para la jardinería como maceteros, tierra de hojas, flores y arbustos, todo esto para ayudar a una fundación sin fines de lucro.
+            </p>
+            <p class="text-center"> Telefono: +569 5700 9134
+            </p>
+
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-4 margen1 ">
+
+            <img src="{% static 'floreria/img/FLORES.PNG'%}" class="d-block w-100 img-thumbnail rounded-circle" alt="Responsive image">
+
+
+        </div>
+    </div>
+
+</div>
+<br>
+
+<!--Carrusel-->
+
+<div class="container-fluid ">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="{% url 'tienda' %}">
+                <img src="{% static 'floreria/img/Flores_oferta.jpg'%}" class="d-block w-100" alt="..."></a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>¡Oferta de temporada!</h1>
+                    <h3>Flores e temporada a un 30% de descuento .</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="{% url 'tienda' %}">
+                <img src="{% static 'floreria/img/macetero_oferta.jpg'%}" class="d-block w-100" alt="..."></a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>¡Renueva tus macetaros!</h1>
+                    <h3>Todo maceteros con 20% de descuento.</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="{% url 'tienda' %}">
+                <img src="{% static 'floreria/img/Fertilizante_oferta.jpg'%}" class="d-block w-100" alt="..."></a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>¡Envios gratis!</h1>
+                    <h3>Sobre compras de $20.000 en Fertilizante.</h3>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+
+
+</div>
+
+{% endblock %}

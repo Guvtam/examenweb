@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block titulo %} Tienda {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Productos</h4>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>IMAGEN</th>
+                    <th>NOMBRE</th>
+                    <th>CATEGORIA</th>
+                    <th>PRECIO</th>
+                     <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.id }}</td>
+                    <td>
+                        <img src="{{ producto.imagen.url }}" height="100">
+                    </td>
+                    <td>{{ producto.nombre_producto }}</td>
+                    <td>{{ producto.categoria}}</td>
+                    <td>{{ producto.precio }}</td>
+                    <td>
+                        <a name="" id="" class="btn btn-success" href="#" role="button">Comprar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+    
+</div>
+
+{% endblock %}

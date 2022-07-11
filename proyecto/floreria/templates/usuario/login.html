@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block titulo %} LOGIN {% endblock %}
+
+{% block contenido %} 
+
+        
+           
+        
+
+    <div class="card">
+        <div class="card-header">
+            Registro Usuario
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Datos del Usuario</h3>
+            
+          
+                <form enctype="multipart/form-data"   method="post">
+                    {% csrf_token %}
+                    <br>
+                    <div class="form-group">
+                        <label class="form-label">Nombre Usuario:</label>
+                        <input type="text" class="form-control" placeholder="Nombre de Usuario" name="username">
+                    </div>
+                    <div class="form-group">
+                        
+                        <label class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" placeholder="contraseña" name="password">
+                    </div>
+             
+                
+                   
+                <button class="btn btn-success" type="submit" id="submit">Registrarse</button>
+                <a class="btn btn-danger" href="{% url 'tienda' %}" role="button">Cancelar</a>
+            </form>
+    
+        </div>
+        <div class="card-footer text-muted">
+            
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
